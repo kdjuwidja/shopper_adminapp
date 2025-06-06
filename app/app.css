@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+/* Use orange classes directly */
+.bg-orange-600 {
+  @apply bg-orange-600;
+}
+
+.hover\:bg-orange-700:hover {
+  @apply hover:bg-orange-700;
+}
+
+.text-orange-600 {
+  @apply text-orange-600;
+}
+
+.hover\:text-orange-700:hover {
+  @apply hover:text-orange-700;
+}
+
+.border-orange-600 {
+  @apply border-orange-600;
+}
+
+.focus\:ring-orange-500:focus {
+  @apply focus:ring-orange-500;
+}
