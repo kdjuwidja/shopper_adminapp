@@ -28,7 +28,7 @@ export function useLogin() {
         authUrl.searchParams.append('client_id', API_CONFIG.CLIENT_ID);
         authUrl.searchParams.append('redirect_uri', getCallbackUrl());
         authUrl.searchParams.append('state', state);
-        authUrl.searchParams.append('scope', 'profile admin'); // Note: Changed scope to include admin
+        authUrl.searchParams.append('scope', 'admin');
         if (error) {
           authUrl.searchParams.append('error', error);
         }
@@ -38,7 +38,7 @@ export function useLogin() {
         return;
       } else {
         // Redirect to admin home
-        navigate(`/admin/home`);
+        navigate(`/home`);
         return;
       }
     };

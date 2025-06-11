@@ -6,15 +6,15 @@ export default [
     file: "routes/home.tsx"
   },
   {
-    path: "/admin/login",
+    path: "/login",
     file: "login/login.tsx"
   },
   {
-    path: "/admin/callback",
+    path: "/callback",
     file: "callback/callback.tsx"
   },
   {
-    path: "/admin/home",
+    path: "/home",
     file: "admin/adminHome.tsx"
   }
 ] satisfies RouteConfig; 

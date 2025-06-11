@@ -15,37 +15,38 @@ export default function AdminHome() {
     const checkAuth = async () => {
       const accessToken = localStorage.getItem('access_token');
       if (!accessToken) {
-        navigate('/admin/login');
+        navigate('/login');
         return;
       }
 
-      try {
-        // Fetch user profile
-        const response = await fetch('http://localhost:8080/core/v2/user', {
-          headers: {
-            'Authorization': `Bearer ${accessToken}`
-          }
-        });
+      console.log("accessToken", accessToken);
 
-        if (!response.ok) {
-          throw new Error('Failed to fetch user profile');
-        }
 
-        const profile = await response.json();
-        setUserProfile(profile);
-      } catch (error) {
-        console.error('Error fetching user profile:', error);
-        navigate('/admin/login');
-      }
+      // try {
+      //   // Fetch user profile
+      //   const response = await fetch('http://localhost:8080/core/v2/user', {
+      //     headers: {
+      //       'Authorization': `Bearer ${accessToken}`
+      //     }
+      //   });
+
+      //   if (!response.ok) {
+      //     throw new Error('Failed to fetch user profile');
+      //   }
+
+      //   const profile = await response.json();
+      //   setUserProfile(profile);
+      // } catch (error) {
+      //   console.error('Error fetching user profile:', error);
+      //   navigate('/login');
+      // }
     };
-
-    checkAuth();
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
-    navigate('/admin/login');
+    navigate('/login');
   };
 
   if (!userProfile) {

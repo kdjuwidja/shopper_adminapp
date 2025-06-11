@@ -96,9 +96,9 @@ export function useCallback() {
   useEffect(() => {
     if (error) {
       console.log("redirecting to login with error:", error);
-      navigate(`/admin/login?error=${encodeURIComponent("User name or password is incorrect.")}`);
+      navigate(`/login?error=${encodeURIComponent("User name or password is incorrect.")}`);
     } else {
-      navigate('/admin/home');
+      navigate('/home');
     }
   }, [error]);
 
