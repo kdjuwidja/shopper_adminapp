@@ -46,10 +46,8 @@ export function useCallback() {
           body: new URLSearchParams({
             grant_type: 'authorization_code',
             code: code,
-            redirect_uri: getCallbackUrl(),
             client_id: API_CONFIG.CLIENT_ID,
-            client_secret: API_CONFIG.CLIENT_SECRET,
-            state: state,
+            redirect_uri: getCallbackUrl(),
           }),
         });
 
